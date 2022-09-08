@@ -75,7 +75,7 @@ int main() {
 
   cout << "Sorted array!" << "\n";
   for (auto x : array) 
-    cout << x << ", ";
+    cout << x << "\n";
   
   return 0;
 }
