@@ -5,6 +5,10 @@
 
 using namespace std;
 
+// prototypes
+void combine(vector<string> &array, int start, int end);
+void claysort(vector<string> &array, int start, int end);
+
 // don't touch anything above this
 void combine(vector<string> &array, int start, int end) {
   int i = start; // pointer that points to start
@@ -60,14 +64,21 @@ int main() {
   
   vector<string> array{};
   int n{}; 
-  cout << "How many words would you like to sort?: ";
-  cin >> n;
 
+  // new implementation finds end of file
+  std::string inp; 
+  while (std::getline(std::cin, inp)) {
+    //string inp; cin >> inp;
+    array.push_back(inp);
+  }
+
+  /*
   for (int i = 0; i < n; i++) {
     cout << "Enter word #" << i + 1 << " : ";
     string inp; cin >> inp;
     array.push_back(inp);
   }
+  */
 
   int start = 0;
   int end = array.size() - 1;
