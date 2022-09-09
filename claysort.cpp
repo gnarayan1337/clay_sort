@@ -68,23 +68,16 @@ int main() {
   // new implementation finds end of file
   std::string inp; 
   while (std::getline(std::cin, inp)) {
-    //string inp; cin >> inp;
+    // ignoring case
+    std::transform(inp.begin(), inp.end(), inp.begin(),
+    [](unsigned char c){ return std::tolower(c); });
     array.push_back(inp);
   }
-
-  /*
-  for (int i = 0; i < n; i++) {
-    cout << "Enter word #" << i + 1 << " : ";
-    string inp; cin >> inp;
-    array.push_back(inp);
-  }
-  */
 
   int start = 0;
   int end = array.size() - 1;
   claysort(array, start, end);
 
-  cout << "Sorted array!" << "\n";
   for (auto x : array) 
     cout << x << "\n";
   
