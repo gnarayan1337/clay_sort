@@ -44,7 +44,6 @@ void combine(vector<string> &array, int start, int end) {
     array[index] = temp[k++];
   }
   return;
-  
 }
   
 void claysort(vector<string> &array, int start, int end) {
@@ -61,7 +60,7 @@ void claysort(vector<string> &array, int start, int end) {
 }
 
 int main() {
-  cin.tie(NULL) -> ios_base::sync_with_stdio(false);
+  cin.tie(nullptr) -> ios_base::sync_with_stdio(false);
   
   vector<string> array{};
   int n{}; 
@@ -79,8 +78,9 @@ int main() {
   int end = array.size() - 1;
   claysort(array, start, end);
 
-  for (auto x : array) 
+  for (auto x : array) {
     cout << x << "\n";
+  }
   
   return 0;
 }
