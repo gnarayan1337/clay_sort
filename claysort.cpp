@@ -61,7 +61,7 @@ void claysort(vector<string> &array, int start, int end) {
 }
 
 int main() {
-  ios_base::sync_with_stdio(false);
+  cin.tie(NULL) -> ios_base::sync_with_stdio(false);
   
   vector<string> array{};
   int n{}; 
