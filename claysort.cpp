@@ -12,7 +12,7 @@ void claysort(vector<string> &array, int start, int end);
 // don't touch anything above this
 void combine(vector<string> &array, int start, int end) {
   int i = start; // pointer that points to start
-  int mid = (start + end) / 2; // pointer that points to middle of array
+  int mid = (start + end - 1) / 2; // pointer that points to middle of array
   int j = mid + 1; // pointer that points to mid + 1
 
   vector<string> temp;
@@ -52,7 +52,7 @@ void claysort(vector<string> &array, int start, int end) {
     return; // array containing 1 element is a sorted array
 
   // rec case
-  int mid = (start + end) / 2;
+  int mid = (start + end - 1) / 2;
   claysort(array, start, mid);
   claysort(array, mid + 1, end);
   // once the left part and right part are sorted we combine them into a single array
