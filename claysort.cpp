@@ -76,7 +76,11 @@ int main() {
 
   int start = 0;
   int end = array.size() - 1;
+  int mid = (start + end) / 2;
   claysort(array, start, end);
+  //claysort(array, start, mid);
+  //claysort(array, mid + 1, end);
+  //combine(array, start, end);
 
   for (auto x : array) {
     cout << x << "\n";
