@@ -20,11 +20,11 @@ void combine(vector<string> &array, int start, int end) {
   while (i <= mid and j <= end) {
     if (array[i] < array[j]) {
       temp.push_back(array[i]);
-      i++;
+      i+= 1;
     }
     else {
       temp.push_back(array[j]);
-      j++;
+      j+= 1;
     }
   }
 
