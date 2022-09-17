@@ -74,18 +74,32 @@ int main() {
     array.push_back(inp);
   }
 
+  //claysort(array, start, end);
+  
   int start = 0;
   int end = array.size() - 1;
   int mid = (start + end) / 2;
   int q1 = (start + mid) / 2;
   int q3 = (mid + end) / 2;
-  //claysort(array, start, end);
-  claysort(array, start, q1);
-  claysort(array, q1 + 1, mid);
+  int e1 = (start + q1) / 2;
+  int e3 = (q1 + mid) / 2;
+  int e5 = (mid + q3) / 2;
+  int e7 = (q3 + end) / 2;
+    
+  claysort(array, start, e1);
+  claysort(array, e1 + 1, q1);
+  combine(array, start, q1);
+  claysort(array, q1 + 1, e3);
+  claysort(array, e3 + 1, mid);
+  combine(array, q1, mid);
   combine(array, start, mid);
-  claysort(array, mid + 1, q3);
-  claysort(array, q3 + 1, end);
-  combine(array, mid + 1, end);
+  claysort(array, mid + 1, e5);
+  claysort(array, e5 + 1, q3);
+  combine(array, mid, q3);
+  claysort(array, q3 + 1, e7);
+  claysort(array, e7 + 1, end);
+  combine(array, q3, end);
+  combine(array, mid, end);
   combine(array, start, end);
 
   for (auto x : array) {
